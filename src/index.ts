@@ -1,9 +1,9 @@
-import express from 'express'
+import express, {type Request} from 'express'
 import mysql from 'mysql2/promise'
 import 'dotenv/config'
 
 const app = express()
-app.get('/', async (req,res)=> {  
+app.get('/', async (req: Request ,res)=> {  
     if(process.env.DBHOST ===undefined){
         res.status(500).send("DBHOST não está definido nas variaveis de ambiente")
         return
